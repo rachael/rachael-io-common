@@ -4,17 +4,10 @@
 
 var app = require('./common');
 
-/**
- * Additional app.js code goes here.
- *
- * Example:
- *
- * var express = require('express');
- * var files = require('./routes/files');
- * app.use(express.static('public'));
- * app.use('/', files);
- *
- * Would set up a simple server with a route for files.
- */
+var routes = require('./routes/index');
+app.use('/', routes);
+
+var errorHandler = require('./error-handler');
+app.use(errorHandler);
 
 module.exports = app;

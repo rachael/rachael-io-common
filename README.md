@@ -1,4 +1,4 @@
-# rachael-io-common
+# rachael-io-common [![npm](https://img.shields.io/npm/v/rachael-io-common.svg?maxAge=2592000)](https://www.npmjs.com/package/rachael-io-common)
 Common files for rachael.io apps.
 
 ## Installation

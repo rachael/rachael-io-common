@@ -1,6 +1,6 @@
 {
   "name": "rachael-io-common",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Common files for rachael.io apps.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

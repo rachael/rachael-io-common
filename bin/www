@@ -4,7 +4,13 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+// assumes installation in node_modules/
+var app;
+try {
+  app = require('../../../app')
+} catch(e) {
+  app = require('../app');
+}
 var debug = require('debug')('rachael.io:server');
 var http = require('http');
 

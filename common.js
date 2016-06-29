@@ -1,25 +1,25 @@
 var express = require('express');
 var app = express();
 
-var bodyParser = require('body-parser');
 var engines = require('consolidate');
 var compression = require('compression');
-var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var path = require('path');
 
 // app
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(compression());
-app.use(cookieParser());
 app.engine('pug', engines.pug);
 app.engine('html', engines.ejs);
 app.use(logger('dev'));
 
 // static files
-app.use(express.static('./static'));
+app.use(express.static('static'));
+app.use(express.static('node_modules/rachael-io-common/static'));
 
-// views
-app.set('views', [__dirname + '/views', __dirname + '/node_modules/rachael-io-common/views']);
+// views - assumes installation location inside node_modules/
+app.set('views', [
+  path.join(__dirname, '/../../views'),
+  path.join(__dirname, '/views')
+]);
 
 module.exports = app;

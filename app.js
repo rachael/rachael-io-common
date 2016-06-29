@@ -2,7 +2,11 @@
  * Example app.js
  */
 
-var app = require('./common');
+var express = require('express');
+var app = express();
+
+var common = require('./common');
+app.use(common);
 
 var routes = require('./routes/index');
 app.use('/', routes);

@@ -3,15 +3,11 @@
  */
 
 var express = require('express');
-var app = express();
+var app = module.exports = express();
 
-var common = require('./common');
-app.use(common);
+require('./common')(app);
 
 var routes = require('./routes/index');
 app.use('/', routes);
 
-var errorHandler = require('./error-handler');
-app.use(errorHandler);
-
-module.exports = app;
+require('./error-handler')(app);

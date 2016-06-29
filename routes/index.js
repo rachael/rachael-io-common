@@ -1,9 +1,9 @@
 var express = require('express');
-var app = express();
+var router = express.Router();
 
 /* GET home page. Override me. */
-app.get('/', function(req, res) {
+router.get('/', function(req, res) {
   res.render('index.pug', { title: 'Common Files' });
 });
 
-module.exports = app;
+module.exports = router;

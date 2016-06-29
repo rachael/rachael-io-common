@@ -11,18 +11,17 @@ npm install rachael-io-common
 
 Before everything:
 ```javascript
-var common = require('rachael-io-common/common');
-app.use(common);
+var app = express();
+require('rachael-io-common/common')(app);
 ```
 
 After everything:
 ```javascript
-var errorHandler = require('rachael-io-common/error-handler');
-app.use(errorHandler);
+require('rachael-io-common/error-handler')(app);
 ```
 
 #### Inside a template:
-Templates must be stored in `/views` (for now).
+Templates must be relative to `/views` or `/submodules` (for now).
 ```
 extends ../node_modules/rachael-io-common/views/layout
 ```

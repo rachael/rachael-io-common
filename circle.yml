@@ -8,5 +8,5 @@ deployment:
     owner: rachael
     commands:
       - echo -e "$NPM_USER\n$NPM_PASS\n$NPM_EMAIL" | npm login && npm publish
-      # - ./bin/trigger_build rachael.io master $CIRCLE_TOKEN
-      # - ./bin/trigger_build github.rachael.io master $CIRCLE_TOKEN
+      - ./bin/trigger_build rachael.io master $CIRCLE_TOKEN
+      - ./bin/trigger_build github.rachael.io master $CIRCLE_TOKEN

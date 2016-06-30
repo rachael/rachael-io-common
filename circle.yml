@@ -1,6 +1,6 @@
 test:
   pre:
-    - npm i -D
+    - npm i --only=dev
 
 deployment:
   release:

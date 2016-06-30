@@ -12,6 +12,7 @@ module.exports = function(app) {
     app.use(function(err, req, res, next) {
       res.status(err.status || 500);
       res.render('error.pug', {
+        title: err.status + ': ' + err.message,
         message: err.message,
         error: err,
         theme: 'error-theme dev-theme'
@@ -24,6 +25,7 @@ module.exports = function(app) {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error.pug', {
+      title: err.status + ': ' + err.message,
       message: err.message,
       error: { status: err.status },
       theme: 'error-theme'

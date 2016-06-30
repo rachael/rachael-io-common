@@ -7,7 +7,7 @@
 // assumes installation in node_modules/
 var app;
 try {
-  app = require('../../../app')
+  app = require('../../../app');
 } catch(e) {
   app = require('../app');
 }
@@ -94,3 +94,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+module.exports = server;

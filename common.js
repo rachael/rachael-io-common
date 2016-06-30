@@ -10,7 +10,7 @@ module.exports = function(app) {
   app.use(compression());
   app.engine('pug', engines.pug);
   app.engine('html', engines.ejs);
-  app.use(logger('dev'));
+  if(!process.env.SUPPRESS_LOGS) app.use(logger('dev'));
 
   // static files
   app.use(express.static('static'));

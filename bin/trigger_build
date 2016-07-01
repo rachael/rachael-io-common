@@ -18,4 +18,4 @@ curl \
 --header "Accept: application/json" \
 --header "Content-Type: application/json" \
 --data "${post_data}" \
---request POST ${trigger_build_url}
+-X POST ${trigger_build_url}

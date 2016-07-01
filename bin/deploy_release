@@ -1,0 +1,15 @@
+#!/bin/bash
+
+_username=$CIRCLE_PROJECT_USERNAME
+_circle_token=$CIRCLE_TOKEN
+
+_hostname="rachael.io"
+declare -a _apps=(
+    ""
+    "github."
+)
+_branch="master"
+
+for _app in "${_apps[@]}"; do
+    ./trigger_build ${_username}/${_app}${_hostname} ${_branch} ${_circle_token}
+done

@@ -4,15 +4,37 @@
  * Module dependencies.
  */
 
+var http = require('http');
+var path = require('path');
+
 // assumes installation in node_modules/
+// checks root for dist/, then app.js directly, then uses own (for testing) app.js
+var root = '../../..';
 var app;
 try {
-  app = require('../../../app');
+  app = require(path.join(root, 'dist/server.min'));
+  console.log('Server finished loading from dist/');
 } catch(e) {
-  app = require('../app');
+  if(e.message.indexOf(path.join(root, 'dist/server.min')) > -1) {
+    try {
+        console.log('[Warn] Server not found in dist/, searching root directly');
+        app = require(path.join(root, 'server'));
+        console.log('Server finished loading from root');
+    } catch(e) {
+      if(e.message.indexOf(path.join(root, 'server')) > -1) {
+        console.log('[Warn] Server not found in root, assuming test environment');
+        app = require('../server');
+        console.log('Server finished loading from common files example app');
+      } else {
+        throw e;
+      }
+    }
+  } else {
+    throw e;
+  }
 }
-var debug = require('debug')('rachael.io:server');
-var http = require('http');
+
+var debug = require('debug')(app);
 
 /**
  * Get port from environment and store in Express.

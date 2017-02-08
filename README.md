@@ -1,4 +1,4 @@
-# rachael-io-common [![npm](https://img.shields.io/npm/v/rachael-io-common.svg?maxAge=3600)](https://www.npmjs.com/package/rachael-io-common) [![CircleCI](https://img.shields.io/circleci/project/rachael/rachael-io-common.svg?maxAge=3600)](https://circleci.com/gh/rachael/rachael-io-common)
+# rachael-io-common [![CircleCI](https://img.shields.io/circleci/project/rachael/rachael-io-common.svg?maxAge=3600)](https://circleci.com/gh/rachael/rachael-io-common)
 Common files for rachael.io apps.
 
 ## Installation

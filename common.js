@@ -14,6 +14,7 @@ module.exports = function(app) {
 
   // static files
   app.use(express.static('static'));
+  app.use(express.static('dist'));
   app.use(express.static('node_modules/rachael-io-common/static'));
 
   // views - assumes installation location inside node_modules/

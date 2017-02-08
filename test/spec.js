@@ -5,7 +5,7 @@ process.env.SUPPRESS_LOGS = true;
 
 function startServer() {
   delete require.cache[require.resolve('../bin/www')];
-  delete require.cache[require.resolve('../app')];
+  delete require.cache[require.resolve('../server')];
   server = require('../bin/www');
 }
 

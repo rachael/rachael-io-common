@@ -34,8 +34,6 @@ try {
   }
 }
 
-var debug = require('debug')(app);
-
 /**
  * Get port from environment and store in Express.
  */
@@ -114,7 +112,6 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  // debug('Listening on ' + bind);
 }
 
 module.exports = server;

@@ -1,5 +1,5 @@
 # rachael-io-common [![CircleCI](https://img.shields.io/circleci/project/rachael/rachael-io-common.svg?maxAge=3600)](https://circleci.com/gh/rachael/rachael-io-common)
-Common files for rachael.io apps.
+Common files for rachael.io apps. Deprecated.
 
 ## Installation
 ```
